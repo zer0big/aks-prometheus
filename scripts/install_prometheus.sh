@@ -10,9 +10,8 @@ else
     kubectl create namespace $NS;
 fi
 echo "Installing/Upgrading Prometheus"
-
-helm upgrade --install prometheus \
+helm upgrade --install prometheus-operator \
 --namespace monitoring \
-stable/prometheus-operator #\
-# --values ../helm/prometheus_values.yaml \
-# --values ../helm/alertmanager_values.yaml
+stable/prometheus-operator \
+--values ../helm/prometheus_values.yaml \
+--values ../helm/alertmanager_values.yaml 
