@@ -1,8 +1,8 @@
 ##!/usr/bin/env bash
 ### change to your desired values
-LOCATION="canadacentral" 
-RG_NAME="AdventCalendar"
-CLUSTER_NAME="aackube"
+LOCATION="koreacentral" 
+RG_NAME="zerohandsonrg"
+CLUSTER_NAME="zeroaksdemo"
 NODE_SIZE="Standard_B2s"
 NODE_COUNT="2"
 NODE_DISK_SIZE="30"
@@ -20,3 +20,6 @@ az aks create --resource-group $RG_NAME --name $CLUSTER_NAME \
 
 # connect to the cluster
 az aks get-credentials --resource-group $RG_NAME --name $CLUSTER_NAME
+
+# verify the cluster
+kubectl get nodes
